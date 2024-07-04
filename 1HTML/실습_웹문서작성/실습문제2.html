@@ -6,42 +6,59 @@
   <title>수습 국원 지원 양식</title>
   <style>
     table, td, th {
-      border:1px solid #ccc;
-      border-collapse: collapse;
+    /* CSS주석 */
+    /* border : 테두리를 지정하는 속성 
+    1px : 두께
+    solid : 실선
+    border-collapse : 테이블과 셀을 분리 
+    collapse : 합치기(선하나로)
+    separate : 분리
+
+    */
+      border:1px dotted #f70202;
+      border-collapse: collapse; 
     }
     td, th {
       padding:10px 20px;
+      /* 테두리와 컨텐츠 사이의 공간 */
+      /* 상하 좌우  */
+      text-align : center;
+      /* 가로 정렬 */
+      font-weight :100;
+      /* 폰트 크기 */
+
     }
     td:last-child{
+      
       width:200px;
     }
   </style>
 </head>
 <body>
+  <tabel>
+    <tr>
+      <td rowspan="3">개인정보</td>
+      <td>이름</td>
+      <td></td>
+    </tr>
+    <tr>
+     
+      <td>학과/학번</td>
+      <td></td>
+    </tr>
+    <tr>
+      
+      <td>연락처</td>
+      <td></td>
+    </tr>
+    <tr>
+      
+      <td>지원분야</td>
+      <td colspan="2"></td>
+    </tr>
   
-  <table>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
-  td*3
+  </tabel>
+
   <h1><caption>수습 국원 지원 양식</caption></h1>
   <table border="1" width="">
     <tr>
