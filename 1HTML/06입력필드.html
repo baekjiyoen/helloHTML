@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력필드</title>
+</head>
+<body>
+    <h2>텍스트와 관련된 입력필드</h2>
+
+    <!--action : 요청 페이지 주소-->
+    <form action="order.html">
+        <!--input 필드의 속성
+            name : 서버에 값을 전달 할때 필요한 속성
+            id : 해당 요소를 식별 할 수 있는 속성
+            placeholder : 사용자에게 입력값의 힌트를 제공하여 
+                        사용자가 입력필드에 값을 입력하게 되면 사라짐
+            required : 입력필수
+                     속성을 이용해서 체크가 가능하지만 디자인적으로 동떨어진 느낌을 받을 수 있어 
+                     실제 현장에서는 자바스크립트를 활용해서 유효성검사를 진행함                     
+                     유효성 검사(validation check) : 값이 유효한지 체크 (입력필수, 이메일형식체크)
+            -->
+        <ul>
+            <li>
+                아이디 : <input type="text" name="userId"  
+                        required
+                        placeholder="아이디를 입력해주세요">
+            </li>
+            <li>
+                <!--사용자의 입력값을 o로 표시-->
+                비밀번호 : <input type="password" name="userPw" id="userPw">
+            </li>
+            <li>
+                <!--필수값 + @가 입력 및 @뒤에 글자가 입력되었는지 체크-->
+                이메일 : <input type="email" name="email" id="">
+            </li>
+            <li>
+                <!--값을 입력시 http:// 또는 https://가 있는지 체크-->
+                홈페이지 : <input type="url" name="url" id="" value="http://">
+            </li>
+            <li>
+                <!--검색어 입력시 오른쪽에 x 버튼을 보여주고 버튼을 클릭 하면 입력한 내용을 지워줌-->
+                검색 : <input type="search" name="search" id="">
+
+            </li>
+            <li>
+                <!--html5에서 추가된 기능
+                datalist태그(select): 텍스트 필드에서 데이터 목록중 값을 선택 하여 입력
+                입력필드의 list속성에 datalist의 id 값을 입력합니다.-->
+                색상 : <input type=" text" name="color" list="myColor">
+                <datalist id="myColor">
+                    <option value="black>">검정색</option>
+                    <option value="white>">흰색</option>
+                    <option value="skyblue>">하늘색</option>
+
+                </datalist>
+
+
+                
+            </li>
+        </ul>
+
+        <button type="submit">회원가입</button>
+        <button type="reset">초기화</button>
+
+    </form>
+<hr>
+    <h2>숫자와 관련된 입력필드</h2>
+    <h3>드롭다운목록과 텍스트에리어필드</h3>
+    <form action="">
+    <ul>
+        <li>
+            <!--스핀박스(위/아래 화살표버튼)는 브라우져에 따라 출력 유무가 결정됨
+            value : 초기값
+            min : 최소값
+            max : 최대값
+            step : 증감값-->
+
+            <input type="number" name="amount"
+                    value="0" min="0" max="100" step="10">
+        </li>
+        <li>
+            <input type="range" name="point"
+                    value="300" min="0" max="1000" step="100">
+        </li>
+        <button>전송</button>
+    </ul>
+    </form>
+<hr>
+    <h3>날짜/시간 관련된 입력필드</h3>
+    <form action="order.html">
+    <!-- date|month|week|time|datetime-->
+    <ul>
+        <li>
+            <input type="date" >
+            <input type="date" value="2024-07-05">
+        
+        </li>
+        <li>
+            <input type="month">
+            <input type="month" value="2024-07">
+        </li>
+        <li>
+            <!--datetime은 크롬, ie에서 지원되지 않음 datetime-local을 사용-->
+            <input type="datetime">
+            <input type="datetime-local">
+         </li>
+    </ul>
+        <li>
+            <input type="week">
+        </li>
+
+    </form>
+<hr>
+    <h2>라디오버튼과 체크박스</h2>
+    <form action="" method="">
+    <ul>
+        <li>
+            <!--여러 항목중 한가지만 선택해야 하는경우 사용
+                name속성을 똑같이 주어야 이들중 하나만 선택됨
+                선택된 요소의 값(value)이 서버로 전달 됨
+                checked속성 : 요소를 선택하는 속성
+
+                서버에 전달시
+                선택된 값이 없는 경우 전달되지 않음
+                name속성 = 선택된 요소의 value값
+                -->
+            성별 :
+            <input type="radio" name="gender" value="m" checked>남
+            <input type="radio" name="gender" value="f">여
+            <input type="radio" name="gender" value="t">기타
+        </li>
+
+<hr>
+        <li>
+            결혼 여부 :
+            <input type="radio" name="gender" value="marriage" checked> 미혼
+            <input type="radio" name="gender" value="marriage">기혼
+        </li>
+<hr>        
+
+        <li>
+            <!--여러 항목 중 여러 항목을 선택 할 경우-->
+            취미 :
+            <input type="checkbox" name="hobby" value="baseball" checked>야구
+            <input type="checkbox" name="hobby" value="football" >축구
+            <input type="checkbox" name="hobby" value="basketball">농구
+        </li>
+
+        <li>
+            <!--select태그와 option 태그
+                여러 옵션 중에서 선택 하게 하고 싶을때 사용하는 드롭다운목록-->
+            국적
+            <select name="" id="">
+                <option value="">-- 선택 --</option>
+                <option value="ko">한국</option>
+                <option value="ch">중국</option>
+            <!--selected : 선택 -->
+                <option value="jp" selected>일본</option>
+            </select>
+
+            <select>
+                <optgroup label="아시아">
+
+                    <option value="ko">한국</option>
+                    <option value="ch">중국</option>
+                <!--selected : 선택 -->
+                </optgroup>
+                <optgroup label="아메리카">
+                    <option value="en" selected>미국</option>
+                </optgroup>
+            </select>
+        </li>
+        <li>
+            <!--textarea 태그 - 무조건 붙여서 써야함
+            여러줄을 입력 할 수 있는 요소-->
+            <textarea name="" id="" cols="50" rows="20"
+                                    style="resize: none;"
+                                    placeholder="내용을 입력해주세요"></textarea>
+
+        </li>
+    
+    </ul>
+    <button>서버에 요청</button>
+</form>
+</body>
+</html>

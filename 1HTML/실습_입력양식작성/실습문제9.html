@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        label{
+            width: 120px;
+            float: left;
+            text-align: center; /* 가운데 정렬 */
+            font-weight: bold;
+        }
+        input[type=text],
+        input[type=password],
+        input[type=email] {
+            width: 250px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="login.html" method="post">
+    <fieldset>
+        <legend>필수 입력 사항</legend>
+        <label>ID</label> 
+        <input type="text" placeholder="아이디 10글자 이내" name="id"> 
+        <button>중복확인</button>
+        <br><label>비밀번호</label>
+        <input type="password" name="pw" placeholder="영문, 숫자, 특수문자 포함 8자 이상">
+        <br><label>비밀번호 확인</label>
+        <input type="password">
+        <br><label>email</label> 
+        <input type="email" name="email"> 
+        <select name="emailtype">
+            <option value="">직접입력</option>
+            <option value="naver.com">네이버</option>
+            <option value="daum.com">다음</option>
+            <option value="gmail.com">gmail</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>추가정보</legend>
+        프로필 사진 : <input type="file" name="imgfile">
+        <br><br>성별 : 
+        <input type="radio" name="gender" value="M" checked>남자
+        <input type="radio" name="gender" value="F">여자
+        <br><br>생년월일 : <input type="date" name="birth" id="">
+        <br><br>취미 : 
+        <br>
+        <input type="checkbox" name="hobby" value="B1">야구
+        <input type="checkbox" name="hobby" value="B2">농구
+        <input type="checkbox" name="hobby" value="S">축구
+        <br>
+        <input type="checkbox" name="hobby" value="S">공부
+        <input type="checkbox" name="hobby" value="M">음악감상
+        <br>
+        <input type="checkbox" name="hobby" value="E">기타
+
+        <br><br>자기소개
+        <br><textarea name="content" cols="40" rows="5"></textarea>
+
+    </fieldset>
+    <p>
+        <button type="submit">회원가입</button>
+        <button type="reset">다시입력</button>
+        <button>이전으로</button>
+    </p>
+
+    </form>
+
+    쿼리스트링
+    ?id=id
+        &pw=pw
+        &email=email%40aaa.com
+        &emailtype=
+        &imgfile=
+        &gender=M
+        &birth=
+        &content=
+
+        
+</body>
+</html>
