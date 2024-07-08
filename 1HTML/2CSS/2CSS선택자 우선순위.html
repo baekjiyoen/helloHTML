@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--내부스타일-->
+    <style>
+        span{
+            /* 1rem : 16px */
+            /* 16px * 2 */
+            /* 절대값 : rem */
+            /* 부모를 기준으로한 상대 크기 */
+            font-size: 2em;
+
+        }
+        div{
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>선택자 우선순위</h1>
+    <p>
+        기본적으로 위에서 아래로 적용
+        같은 요소에 다양한 선택자로 CSS속성이 적용된 경우
+        우선순위에 따라서 스타일이 적용
+
+        <br>
+
+        <!--인라인 스타일 : 태그에 직접 작성-->
+        <span style="font-weight: 900;">
+            태그 선택자 < 클래스 선택자 < 아이디 선택자 < 인라인 선택자 < important
+
+
+
+        </span>
+
+    </p>
+    <div>
+        박스
+        <span>
+            박스안에 span
+        </span>
+    </div>
+
+</body>
+</html>

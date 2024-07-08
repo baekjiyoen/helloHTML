@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>배경 스타일</title>
+    <style>
+      div{/*div태그를 의미*/}
+      .div{/*class속성의 값이 div인 요소*/}
+      #div{/*id속성의 값이 div인 요소*/}
+
+			.container{
+        border: 1px solid black;
+        /*단위(px)를 작성하지 않으면 적용 안됨 */
+        width: 600px;
+        height: 500px;
+        background-image: url(../images/apple-bg.jpg);
+        background-repeat: no-repeat;
+        /* contain : 가로/세로 둘중 하나에 맞게 보여줌(빈공간이 나올수 있음)*/
+        background-size: contain;
+        /* cover : 가득 채워서 보여줌(이미지 짤릴수 있음) */
+        background-size: cover;
+
+        position: relative;
+      }
+      
+      .content{
+        background-color: #ffffff72;
+        /*height: 80px;
+        line-height: 80px;*/
+        width: 500px;
+        margin: 0px auto ;
+        /*
+        나의 현재 위치를 기준으로 위치를 잡을때 사용
+        자식요소들의 기준이 될 수 있다
+        
+        position: relative;
+        top: 350px;
+        */
+        position: absolute;
+        bottom: 50px;
+        
+        /*요소의 가로 너비, 세로길이를 이용해서 정렬*/
+        left: 50%;
+        transform: translateX(-50%);
+
+
+        /*margin-top: 350px;*/
+        /* border: 1px solid pink; */
+      }
+      h1{
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+		<div class="container">
+			<div class="content">
+				<h1>하루 한 알의 사과는 의사를 멀리 한다</h1>		
+			</div>
+		</div>
+  </body>
+</html>

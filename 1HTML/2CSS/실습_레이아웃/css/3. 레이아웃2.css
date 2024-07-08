@@ -1,0 +1,187 @@
+/* 박스 가운데 정렬 */
+#container{
+    width: 800px;
+    margin: 0px auto;
+}
+
+header{
+    height: 150px;
+    background: url(../images/nav2.png) no-repeat right center #F46075;
+    /* background-size: 100px; */
+}
+*{
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    padding-right: 120px;
+}
+li{
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+    height: 70px;
+    line-height: 70px;
+    /* border: 1px solid; */
+    margin-top:50px;
+    /* margin-left: 30px; */
+}
+header a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    /* border: 1px solid; */
+
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 30px;
+
+    display: inline-block;
+}
+
+/* 마우스를 올렸을때 핑크색으로 색상을 변경 */
+header a:hover{
+    background-color: pink;
+}
+/* 첫번째요소의 색상을 핫핑크로 변경 */
+
+nav li:first-child a{
+    background-color: pink;
+}
+section{
+    width: 70%;
+    /* background-color: aquamarine; */
+    float: left;
+}
+aside{
+    width: 30%;
+    background-color: aqua;
+    float:right;
+}
+footer{
+    clear: both;
+    background-color: #F46075;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+article>h3{
+    border-left: 6px solid;
+    padding-left: 5px;
+}
+
+article{
+    display: inline-block;
+    width: 45%;
+    margin: 10px;
+    /* 
+    요소의 세로배치에 사용 되는 속성
+        - 인라인, 인라인블럭요소에서 사용 가능 
+        top : 위쪽 
+        middle : 가운데
+        bottom : 아래쪽
+    */
+    vertical-align: top;
+    
+
+}
+
+article>dl{
+    /* border: 1px dotted; */
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #333;
+    padding: 20px;
+    height: 400px;
+    /* 영역을 벗어나면 숨김처리 */
+    overflow: hidden;
+}
+
+aside{
+    /* background-image: url(); */
+    height: 800px;
+    background: url(../images/3.png) no-repeat bottom right;
+    background-size: 150px;
+}
+article dt{
+    font-weight: 700;
+    height: 30px;
+    line-height: 30px;
+    background-color: #eee;
+}
+
+article dd{
+    margin: 0px;
+    font-size: 0.9rem;
+}
+
+
+
+/* 
+로그인폼 css =========================
+*/
+
+*{
+    /* 박스의 크기를 border까지 지정 */
+    box-sizing: border-box;
+}
+div{
+    /* border: 1px solid; */
+}
+
+#login_wrap{
+    margin-top: 20px;
+    width: 230px;
+    height: 120px;
+}
+
+form{
+    /* height: 80%; */
+}
+#login_form_input{
+    width: 65%;
+    background-color: aquamarine;
+    /* 요소를 왼쪽으로 배치 */
+    float: left;
+    height: 80px;
+}
+#login_form_input > input {
+    width: 100%;
+    height: 50%;
+}
+
+#login_form_submit{
+    width: 35%;
+    background-color: aqua;
+    /* 요소를 오른쪽으로 배치 */
+    float: right;
+    height: 80px;
+}
+#login_form_submit > button{
+    width: 100%;
+    height: 100%;
+}
+#login_link{
+    /* 배치끝 
+    float속성을 이용하여 배치 할경우 clear를 이용해서
+    끝을 알려 줍니다*/
+    clear: both;
+}
+
+#login_link{
+    /* height, line-height을 동일하게 해주면
+    한줄일경우 세로 중앙배치 */
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+#login_link a{
+    text-decoration: none;
+    color: black;
+    font-size: 0.8rem;
+}

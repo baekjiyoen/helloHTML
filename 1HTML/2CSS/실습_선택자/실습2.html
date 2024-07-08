@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>가상 클래스</title>
+	<style>
+		#container {
+			text-align:center;
+			color:#2b2b2b;
+		}
+		table {
+			border:2px solid;
+		}
+		td{
+			border: 2px dotted red;
+		}
+		table {
+			width:200px;
+			margin:0 auto;
+			/* 테이블과 셀의 간격을 없앨때 사용 */
+			border-collapse:collapse;
+			/* 테이블과 셀과의 간격 */
+			border-spacing: 50px 20px;
+		}
+		td {			
+			text-align:left;
+			padding:10px;
+			padding-left:20px;
+		}
+		
+		/*  2n, even 짝수 
+		    2n+1, 2n-1, odd 홀수*/
+		tr:nth-child(odd){
+			background-color: #ccc;
+		}
+
+		a{
+			padding: 20px;
+		}
+
+		:link{
+			background-color: red;
+			color: #2b2b2b;
+		}
+
+		:visited{
+			color: red;
+			background-color: coral;
+		}
+
+		a:hover{
+			color: #fff;
+			background-color: #ccc;
+		}
+
+		a:active{
+			background-color: aqua;
+		}
+	</style>
+</head>
+<body>
+
+<a href="실습1.html">a</a>
+<a href="http://naver.com">b</a>
+<a href="c.html">c</a>
+<a href="#">d</a>
+
+	<div id="container">
+		<h1>웹 개발</h1>
+		<table>
+			<thead>
+			<tr>
+				<td>HTML</td>
+				<td></td>
+			</tr>
+			</thead>
+			<tr>
+				<td>CSS</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Javascirpt</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>React</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>node.js</td>
+				<td></td>
+			</tr>			
+		</table>
+	</div>
+</body>
+</html>

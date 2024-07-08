@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>애완견 돌보기</title>
+	<style>
+		header{
+			width: 800px;
+			height: 120px;
+			background-color: rgb(153, 226, 255);
+		}
+		/* 고급선택자 */
+		header > h1{
+			line-height: 120px;
+			/*border: 1px solid red;*/
+			float: left;
+			margin: 0px;
+			padding: 0px 20px;
+			font-size: 1.3rem;
+		}
+		nav{
+			float: right;
+			padding-right: 20px;
+			/* 세로중앙정렬 */
+			line-height: 120px;
+			/*border: 3px solid red;*/
+		}
+		ul{
+			margin: 0px;
+			padding: 0px;
+		}
+		li{
+			display: inline-block;
+		}
+		a{
+			/*크기를 지정 하기 위해서
+			display속성에 대해서 알고 있어야 해요!!
+			inline : 크기를 가질수 없다
+			크기를 지정 하기 위해서는 block, inline-block 이어야 한다
+
+			1. 크기 지정 하고 싶은데 display속성을 변경하지 않은경우
+			2. 선택자
+			3. 요소의 크기를 확인하고 싶으면 border를 주세요
+			*/
+			
+			display: inline-block;
+			color: #fff;
+			text-decoration: none;
+			font-weight: 700;
+			width: 100px;
+			/*a태그의 크기지정, 글자 가운데 정렬*/
+			height: 50px;
+			line-height: 50px;
+			border-radius: 10px;
+			text-align: center;
+			/*border: 1px saddlebrown solid;*/
+		}
+		section{
+			box-sizing: border-box;
+			width: 800px;
+			height: 400px;
+			border: 5px solid black;
+			border-bottom: 20px solid black;
+		}
+		/*마우스가 올라왔을때!*/
+		a:hover{
+			color: aqua;
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	
+	<header>
+		<h1>애완견 종류</h1>
+		<nav>
+			<ul>
+			  <li><a href="#">애완견 종류</a></li>
+			  <li><a href="#">입양하기</a></li>
+			  <li><a href="#">건강돌보기</a></li>
+			  <li><a href="#">더불어살기</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<h1>또다른제목</h1>
+	</section>
+	<footer>
+		<p>Copyright 2012 funnycom</p>
+	</footer>
+</body>
+</html>

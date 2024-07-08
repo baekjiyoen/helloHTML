@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            border: 2px solid;
+            width: 700px;
+            height: 500px;
+            /* 
+            플렉스
+            여유공간에 따라 너비나 높이 위치를 자유롭게 변경할 수 있음
+             */
+            display: flex;
+            /* 주축을 결정 */
+            /* 주축을 가로로 (기본값)*/
+            flex-direction: row;
+            /* 주축을 세로로 */
+            flex-direction: column;
+            /* 왼->오, 위->아 
+                reverse -> 오->왼, 아래->위*/
+            flex-direction: row-reverse;
+            flex-direction: column-reverse;
+            
+            flex-direction: row;
+
+            /* 여러줄로 배치 */
+            flex-wrap: wrap;
+            /* flex-wrap: wrap-reverse; */
+            
+            /* 한줄로 배치 (기본)*/
+            /* flex-wrap: nowrap; */
+
+            /* 플렉스 항목을 주축 방향으로 배치 하는 기준 */
+            justify-content: center;
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: space-around;
+            justify-content: space-between;
+            justify-content: center;
+
+
+            /* flex-direction: column-reverse; */
+
+            /* 교차축 정렬 */
+            /* 교차축의 시작점, 끝점에 맞게 배치 */
+            align-items: flex-start;
+            align-items: flex-end;
+            /* 교차축의 가운데 정렬 */
+            align-items: center;
+            /* 플렉스 항목을 늘려 교차축에 가득 차도록 배치 */
+            /* align-items: stretch; */
+
+            /* 여러행인경우, 교차축 기준의 배치 방법을 지정*/
+            align-content: center;
+            align-content: flex-start;
+        }
+        #container div{
+            width:200px;
+            border: 1px solid;
+            background-color: aliceblue;
+
+        }
+    </style>
+</head>
+<body>
+    (div#box$>h2{$})*6
+    <div id="container">
+        <!-- <div id="box1">
+            1
+        </div> -->
+        <div id="box1">
+            <h2>1</h2>
+        </div>
+        <div id="box2">
+            <h2>2</h2>
+        </div>
+        <div id="box3">
+            <h2>3</h2>
+        </div>
+        <div id="box4">
+            <h2>4</h2>
+        </div>
+        <div id="box5">
+            <h2>5</h2>
+        </div>
+        <div id="box6">
+            <h2>6</h2>
+        </div>
+
+    </div>
+
+</body>
+</html>

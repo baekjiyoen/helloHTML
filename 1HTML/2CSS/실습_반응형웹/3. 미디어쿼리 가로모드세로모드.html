@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 가로모드 : 디바이스의 가로 영역이 더 큰것*/
+        @media screen and (orientation:landscape) {
+            body{
+                background-color: orange;
+            }
+        }
+
+        /* 세로모드 : 디바이스의 세로 영역이 더 큰것*/
+        @media screen and (orientation:portrait) and (max-width:320px){
+            body{
+                background-color: yellow;
+            }
+        }
+
+        @media screen and (orientation:portrait) and (max-width:768px){
+            body{
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

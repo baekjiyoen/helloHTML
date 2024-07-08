@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        #container{
+            width: 800px;
+            height: 100vh;
+            /* border: 1px solid; */
+
+            margin: 0px auto ;
+
+            /* 플렉스 박스로 사용! */
+            display: flex;
+            flex-wrap: wrap;
+            /* 여러줄일때 교차축 기준의 배치 방법  */
+            align-content: flex-start;
+        }
+        header, nav, aside, main, footer,a {
+            border: 1px solid;
+        }
+        nav{
+            display: flex;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+        }
+        nav a{
+            width: 25%;
+        }
+        header{
+            height: 10%;
+            width: 100%;
+        }
+        nav{
+            height: 5%;
+            width: 100%;
+            
+        }
+
+
+
+        .leftside{
+            width: 20%;
+            height: 50%;
+        }
+        main{
+            width: 50%;
+        }
+        .rightside{
+            width: 30%;
+        }
+        footer{
+            width: 100%;
+            height: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header></header>
+        <nav>
+            <a href="">메뉴1</a>
+            <a href="">메뉴2</a>
+            <a href="">메뉴3</a>
+            <a href="">메뉴4</a>
+
+        </nav>
+        <aside class="leftside"></aside>
+        <main></main>
+        <aside class="rightside"></aside>
+        <footer></footer>
+    </div>
+</body>
+</html>

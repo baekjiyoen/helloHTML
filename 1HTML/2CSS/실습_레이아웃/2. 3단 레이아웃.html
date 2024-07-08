@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>애완견 돌보기</title>
+	<style>
+		a{
+			padding: 20px;
+		}
+		a:link{
+			text-decoration: none;
+			color: black;
+		}
+		a:visited{
+			color: aqua;
+		}
+		a:hover{
+			background-color: blueviolet;
+			color: white;
+		}
+		a:active{
+			background-color: red;
+		}
+		#container{
+			width: 800px;
+			/* 높이를 지정 하지 않으면 하위요소의 높이 */
+			/* height: 1000px; */
+			background-color: orangered;
+			margin: 0px auto;
+		}
+		header{
+			background-color: tomato;
+			height: 150px;
+		}
+		main{
+			height: 800px;
+			background-color: aquamarine;
+		}
+		footer{
+			/* 컨텐츠가 없는경우, 높이가 0으로 잡혀서 화면에 안보임 */
+			background-color: pink;
+			height: 100px;
+		}
+		*{
+			box-sizing: border-box;
+		}
+		logo{
+			float: left;
+			width: 30%;
+			height: 100%;
+			/* border: 1px solid; */
+			background-color: brown;
+		}
+		nav{
+			height: 100%;
+			width: 70%;
+			float: right;
+			/* border: 1px solid; */
+		}
+		section{
+			width: 80%;
+			height: 100%;
+			background-color: gold;
+			float: left;
+		}
+		aside{
+			width: 20%;
+			height: 100%;
+			float: right;
+			/* border: 1px solid; */
+		}
+	</style>
+</head>
+<body>
+	<a href="1. 회원가입폼.html">회원가입폼</a>
+	<a href="2. 3단 레이아웃.html">3단레이아웃</a>
+	<a href="3. 레이아웃0.html">레이아웃</a>
+	
+	
+	<div id="container">
+		
+		<header>
+			<logo>로고</logo>
+			<nav>
+				메뉴
+			</nav>
+		</header>
+		<main>
+			<!-- 컨텐츠를 주제별로 묶을때 사용 -->
+			<section>
+				<!-- 블로그의 포스트 내용이나 기사등 독립적인 웹콘텐츠 항목 -->
+				<article>독립적 콘텐츠</article>
+			</section>
+			<aside>사이드바</aside>
+		</main>
+		<footer>하단영역</footer>
+
+	</div>
+	
+</body>
+</html>

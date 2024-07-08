@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            /* 박스의 크기를 정할때 보더영역까지를 크기로 지정 */
+            box-sizing: border-box;
+        }
+        #container, header, nav, main, footer{
+            /* border: 1px solid; */
+        }
+        #container{
+            width: 900px;
+            height: 100vh;
+            margin: 0px auto;
+        }
+        header{
+            height: 15%;
+
+            display: flex;
+            /* 주축 가운데로 정렬 */
+            justify-content: center;
+            /* 교차축 가운데로 정렬 */
+            align-items: center;
+
+            background: url(image/logo.jpg) no-repeat left center;
+            background-position-x: 30px;
+        }
+        nav{
+            height: 40px;
+            display: flex;
+            margin-bottom: 10px;
+        }
+        main{
+            height: 73%;
+            display: flex;
+            align-content: flex-start;
+        }
+        footer{
+            height: 15%;
+        }
+
+        aside, section{
+            height: 10%;
+            /* border: 1px solid; */
+        }
+
+        .leftside{
+            width: 20%;
+            height: 100%;
+        }
+
+        .leftside img{
+            width: 100%;
+            height: 100%;
+        }
+        section{
+            width: 55%;
+            
+            height: 100%;
+
+            display: flex;
+            flex-wrap: wrap;
+        }
+        article{
+            width: 50%;
+            padding: 10px;
+            text-align: center;
+        }
+        article img{
+            width: 100%;
+        }
+        .rightside{
+            width: 25%;
+            height: 100%;
+        }
+        a{
+            text-decoration: none;
+            color: #333;
+        }
+        nav a{
+            /* a요소는 인라인 요소
+            부모박스를 플랙스, float, display 변경  */
+            width: 25%;
+            /* border: 1px solid; */
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            background-color: green;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        nav a:hover{
+            background-color: greenyellow;
+            color: #333;
+        }
+        .rightside .loginbox{
+            height: 120px;
+        }
+        .rightside img{
+            width: 100%;
+        }
+
+        .inputbox{
+            /* 블럭요소이므로 한줄을 몽땅 차지 */
+            height: 80px;
+            /* background-color: #333; */
+            width: 70%;
+            float: left;
+        }
+        .inputbox input{
+            width: 100%;
+            height: 50%;
+        }
+        .btnbox{
+            height: 80px;
+            width: 30%;
+            /* background-color: aqua; */
+            float: left;
+        }
+        .btnbox button{
+            width: 100%;
+            height: 100%;
+        }
+        .linkbox{
+            clear: both;
+            height: 40px;
+            /* background-color: blue; */
+            text-align: center;
+        }
+        .linkbox a{
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <img src="image/mainlogo.jpg" alt="">
+        </header>
+        <nav>
+            <a href="">메뉴1</a>
+            <a href="">메뉴2</a>
+            <a href="">메뉴3</a>
+            <a href="">메뉴4</a>
+
+        </nav>
+        <main>
+            <aside class="leftside">
+                <img src="image/left_img.jpg" alt="">
+            </aside>
+            <section>
+                <article>
+                    <img src="image/main_img1.jpg" alt="">
+                    <p>오늘도 맑음</p>
+                </article>
+                <article>
+                    <img src="image/main_img1.jpg" alt="">
+                    <p>오늘도 맑음</p>
+                </article>
+                <article>
+                    <img src="image/main_img1.jpg" alt="">
+                    <p>오늘도 맑음</p>
+                </article>
+                <article>
+                    <img src="image/main_img1.jpg" alt="">
+                    <p>오늘도 맑음</p>
+                </article>
+            </section>
+            <aside class="rightside">
+                <div class="loginbox">
+                    <div class="inputbox">
+                        <input type="text">
+                        <input type="text">
+                    </div>
+                    <div class="btnbox">
+                        <button>로그인</button>
+                    </div>
+                    <div class="linkbox">
+                        <a href="">회원가입</a>
+                        <a href="">아이디찾기</a>
+                        <a href="">비밀번호찾기</a>
+                    </div>
+                </div>
+                <img src="image/right_img.jpg" alt="">
+                <img src="image/me_chat.jpg" alt="">
+
+            </aside>
+        </main>
+        <footer>
+            <img src="image/footer.JPG" alt="">
+        </footer>
+    </div>
+</body>
+</html>

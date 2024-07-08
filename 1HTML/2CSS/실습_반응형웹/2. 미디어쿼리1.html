@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 배경이미지 */
+        body{
+            background: url(images/bg0.jpg) no-repeat fixed;
+            background-size: cover;
+        }
+
+        /* screen : 화면용 스타일을 작성 */
+        /* 데스크탑용 */
+        @media screen and (max-width:1024px){
+            body{
+                background: url(images/bg1.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+
+        /* 테블릿용 */
+        @media screen and (max-width:768px){
+            body{
+                background: url(images/bg2.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+
+        /* 모바일용 */
+        @media screen and (max-width:320px){
+            /* 선택자를 이용해서 스타일을 지정 */
+            body{
+                background: url(images/bg3.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>테스트</h1>
+    <h2>테스트 1234</h2>
+    <h3>테스트 abcd</h3>
+</body>
+</html>

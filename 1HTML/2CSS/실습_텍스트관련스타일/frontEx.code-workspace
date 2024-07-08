@@ -1,0 +1,22 @@
+{
+    "folders": [
+        {
+            "name": "frontEx",
+            "path": "../../../../Users/pjn/git/frontEx"
+        },
+        {
+            "name": "doit-js",
+            "path": "../../../../Users/pjn/git/doit-js"
+        },
+        {
+            "path": "../../../../Users/pjn/Downloads/JS"
+        },
+        {
+            "name": "jsp23",
+            "path": "../../../../Users/pjn/.git/jsp23"
+        }
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "frontEx"
+    }
+}
