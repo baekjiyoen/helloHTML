@@ -49,3 +49,63 @@ a{
     color: #21f805;
     text-decoration: none;
 }
+
+.center{
+    text-align: center;
+}
+.left{
+    text-align: left;
+
+}
+
+.right{
+    text-align: right;
+}
+
+.lineheight{
+    /* 요소의 테두리 지정 */
+    border: 1px solid black;
+    /* 세로 중앙 정렬 - 한줄일때만 가능 */
+    height: 100px;
+    line-height: 100px;
+    /* 요소의 크기 지정 */
+    width: 400px;
+    /* 글자 가운데 정렬 */
+    text-align: center;
+    /* 블럭형식인 경우 margin을 auto로 주어
+    요소를 가운데 정렬을 할 수 있다 */
+    margin: auto;
+    
+}
+
+.shadow1{
+    /* 그림자 효과
+        가로, 세로, 번짐정도, 색상    
+        양수 : 오른쪽 아래쪽
+
+        ,로 연결하여 여러개의 그림자를 출력 할 수 있다
+    */
+    text-shadow: 5px 5px 2px rgb(195, 0, 255)
+                    , 7px 7px 5px gray;
+    font-size: 3rem;
+}
+.shadow2{
+    /* 음수 : 왼쪽 위쪽 */
+    text-shadow: -5px -5px 2px rgb(0, 57, 131); 
+    font-size: 3rem;
+}
+
+.shadow3{
+    text-shadow: 7px -7px 20px red;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #a15177;
+}
+
+.spacing{
+    letter-spacing: 0.5rem;
+}
+
+.spacing1{
+    word-spacing: normal;
+}

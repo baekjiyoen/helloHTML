@@ -6,70 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>실습2</title>
     <style>
-       span{
-        color: rgb(175, 14, 14);
-        font-weight: 800;
-       }
-       
-       div{
-        /* 16진수로 색상 표현
-        #000 - 검정
-        #333 - 진한회색
-        #eee - 연한회색 
-        #fff - 흰색
+        /* import 구문은 style 태그 바로 아래 위치해야 함 */
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+
+        
+        .font1{
+        font-family: "Dongle", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+        
+        *{
+        font-family: "Dongle", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+
+        }
+        /* font-family 글꼴을 상속되는 속성이므로 부모요소의 글꼴을 지정하면
+        자식간의 */
+        /* 
+        선택자{} 
         */
-        border: 1px solid #eee;
-        /* 단위를 꼭 입력 해야 해요!!!!!!! */
-        width: 500px;
-        margin: 0px auto;
-       }
-       ul{
-        list-style: none;
-        /* padding-left: 20px; */
-       }
-       /* 가운데 정렬 */
-       body{
-        margin: 0px auto;
-       }
-       li{
-        line-height: 50px;
-       }
+        div{
+            border: 1px solid #ccc;
+            padding: 10px;
+
+        }
+
+        .subject{
+            color: orangered;
+            font-size: 1.2rem;
+            font-weight: 800;
+
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            font-weight: 100;
+        }
     </style>
 </head>
 <body>
-<div>
-    <h1>최신 웹 디자인 트렌드</h1>
-    
-    <ul>
-        <li>
-            <span class='subject'>반응형 웹 디자인</span> - 다양한 화면 크기에 최적화하다
-        </li>
-        <li>
-            <span class='subject'>플랫 디자인</span> - 입체에서 평면으로
-        </li>
-        <li>
-            <span class='subject'>풀스크린 배경</span> - 콘텐츠에 집중
-        </li>
-        <li>
-            <span class='subject'>원 페이지 사이트</span> 
-            - 한 페이지에 모든 내용을 담다
-        </li>
-        <li>
-            <span class='subject'>패럴랙스 스크롤링</span> 
-            - 동적인 효과로 강한 인상을!
-        </li>
-        <li>
-            <span class='subject'>웹 폰트</span> 
-            - 웹 타이포그래피를 받쳐주는 기술
-        </li>
-        
-    </ul>
+    <div>
+        <h1 class="font1">최신 웹 디자인 트렌드</h1>
+        <ul>
+            <li> <span class="subject">반응형 웹 디자인</span> - 다양한 화면 크기에 최적화하다</li>
+            <li> <span class="subject">플랫 디자인</span> - 입체에서 평면으로</li> 
+            <li> <span class="subject">풀스크린 배경</span> - 콘텐츠에 집중</li> 
+            <li> <span class="subject">원 페이지 사이트</span> - 한 페이지에 모든 내용을 담다</li> 
+            <li> <span class="subject">패럴랙스 스크롤링</span> - 동적인 효과로 강한 인상을!</li> 
+            <li> <span class="subject">웹 폰트</span> - 웹 타이포그래피를 받쳐주는 기술</li> 
 
+        </ul>
 
-
- 
- 
- 
-</div>
+    </div>
 </body>
 </html>
