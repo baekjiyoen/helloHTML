@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 5px dotted #333;
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+
+
+            /* 배경 이미지 */
+            background-image: url(images/bg1.jpg); 
+            background-color: yellow;
+            /* background-origin : 배경화면을 어디까지 보여줄지 결정
+                테두리까지, 패딩까지, 컨텐츠까지인지 */
+            background-origin: border-box;
+
+        }
+        .box1{
+            /* 요소크기의 절반 */
+            background-size: 50%;
+            /* 반복설정 (기본값은 반복) */
+            background-repeat: no-repeat;
+            background-origin: content-box;
+
+        }
+        
+        .box2{
+            background-image: url(images/bg2.png);
+            /* no-repeat : 반복하지 않음 
+               repeat-x : 가로반복
+               repeat-y : 세로반복
+               repeat : 가로세로 반복 */
+            background-repeat: repeat;
+            /* cover : 가로 세로 꽉 채워서 이미지를 출력 */
+            /* background-size: cover; */
+            /* contain : 가로나 세로에 꽉 채워서 이미지를 출력 
+                            그러다 보니 여백 발생 할 수 있다 */
+            background-size: contain;
+            background-size: 100px;
+            /* 위치 입력시 세로위치, 가로위치
+                가로위치 : left center right
+                세로위치 : top center bottom  */
+            background-position: bottom center;       
+
+        }
+
+        .box3{
+            background: url(images/bg3.jpg) no-repeat;
+            background-size: 50%;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- div.box$*6 -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+</body>
+</html>

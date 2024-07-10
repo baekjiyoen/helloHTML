@@ -3,21 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>이미지와 글자</title>
     <style>
         .float{
             /* 이미지와 글을 함께 출력 할 때 */
-            float: right;
+            float: left;
+            width: 300px;
         }
         .clear{
             clear: both;
         }
+        ul{
+            padding: 0px;
+            list-style: none;
+            
+        }
+        li{
+            /* 박스의 크기를 정할때 테두리까지 포함 */
+            box-sizing: border-box;
+            border: 1px solid;
+            /* display: inline-block; */
+            float: left;
+            /* 가로영역지정 */
+            width: 25%;
+            /* 세로영역지정 및 가운데 정렬 */
+            height: 50px;
+            line-height: 50px;
+            
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
 
-    <img class="float" src="images/apple-bg.jpg" width="300px">
+        <ul>
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+            <li>메뉴4</li>
+        </ul>
     
+     <p class="clear"></p>
+    
+
+    <br>
+
+
+
+    <img  src="images/apple-bg.jpg" alt="" class="float">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima incidunt, quos dolorem minus voluptates iure libero, quaerat necessitatibus perferendis pariatur eum ipsum. Possimus velit ipsam ea enim nam esse reiciendis!
     Porro, temporibus. Commodi sunt culpa iure magnam illum a aperiam cupiditate, eum earum voluptatibus facilis mollitia cum, alias, quae ducimus corporis? Et fuga iure eos hic vitae dolore maxime quidem?
     Vero omnis voluptates similique consectetur laborum sit totam laboriosam dolore perferendis aliquid eius, quidem dolorum, minus cupiditate pariatur nostrum iure? Consequatur laboriosam nobis, incidunt ipsum doloribus sint nam saepe quod.
@@ -25,6 +60,8 @@
     Provident nihil cumque illum quasi totam ratione, fuga doloremque. Porro, minus eum iste exercitationem dolorem velit ex quam. Veniam reiciendis quis dolore maiores consequuntur praesentium voluptatibus consectetur autem quod? Quia.
     <p class="clear"></p>
     <img class="clear" src="images/book-icon.png" alt="">
+
+
 
     
 </body>
