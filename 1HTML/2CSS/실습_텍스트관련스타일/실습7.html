@@ -4,28 +4,44 @@
   <meta charset="utf-8">
   <title>배경 이미지</title>
   <style>
+  *{
+    /* border: 1px solid; */
+  }
     div{
-      width: 300px;
-      margin: 0 auto;
+      width: 1000px;
+      margin: auto;
+      /* text-align: center; */
     }
     h1{
-      text-align: center;
-      background-color: rgb(12, 8, 81);
       color: white;
-      font-size: 1.5rem;
-      /* 세로 중앙정렬(한줄일때만 가능) */
+      background-color: black;
+      text-align: center;
+      font-size: 24px;
+      /* 세로영역 가운데 정렬 - 한줄인경우만 */
       height: 50px;
       line-height: 50px;
     }
     p{
-      padding-bottom: 30px;
+      margin-bottom: 100px;
     }
     body{
+      /* ../ : 상위폴더 or ./ : 자기위치*/
       background-image: url(../images/bottom-bg.jpg);
       background-repeat: no-repeat;
-      background-position: center bottom;
-      height: 1200px;
-      border: 1px solid rebeccapurple;
+      background-position: bottom center;
+      
+      /* height: 1200px; */
+      /* margin: 200px; */
+      padding-bottom: 200px;
+
+    }
+    img{
+      /* 자식요소인 경우 부모를 기준으로  */
+      text-align: center;
+
+      /* 블럭요소처럼 만들어서 가운데 정렬 */
+      display: block;
+      margin: auto;
     }
   </style>
 </head>
@@ -41,6 +57,10 @@
   <div>
     <h1>Javascript</h1>
     <p>Labore et ad elit adipisicing sunt reprehenderit minim anim nulla incididunt. Proident anim dolor proident elit nostrud dolor. Culpa mollit veniam in voluptate ex enim qui dolore consectetur. Quis et sit ex elit commodo. Nulla veniam ipsum veniam est sit proident anim id. Qui elit irure ex duis eiusmod eiusmod mollit non nostrud. Cupidatat veniam consectetur duis reprehenderit dolore.</p>
-  </div>
+  </div> 
+  
+    <img src="../images/bottom-bg.jpg" alt="">
+  
+  
  </body>
 </html>
