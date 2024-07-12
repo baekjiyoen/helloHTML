@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+  }
+#wrapper{
+  width: 800px;
+  margin: auto;
+  
+}
+
+  header{
+    height: 100px;
+          width: 100%;
+    background: url(../images/nav2.png) no-repeat right top;
+    background-size: 20% 100%;
+    background-color: rgba(247, 28, 64, 0.747);
+        
+  }
+
+    a{
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+  
+
+  }
+ 
+  
+  nav{
+
+    line-height: 100px;
+   
+  }
+  ul{
+    list-style: none;
+    /* 블럭요소의 크기를 지정, margin속성을 auto */
+    width: 500px;
+    padding: 0px;
+    margin: 0px auto;
+    
+  }
+  li{
+    float: left;
+    width: 100px;
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+
+    color: white;
+    border-right: 2px solid;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 30px;
+  }
+
+footer{
+  clear: both;
+}
+
+section{
+    width: 80%;
+    height: 700px;
+    float: left;
+
+}
+/* 컨텐츠가 없는 경우, 높이영역이 0으로 잡히므로
+  배경이미지를 넣어도 화면에 나오지 않음 */
+aside{
+    width: 20%;
+    height: 650px;
+    background-color: gray;
+    background: url(../images/3.png) no-repeat right bottom;
+    float: right;
+
+
+}
+footer{
+    clear: both;
+    text-align: center;
+    background-color: pink;
+    height: 100px;
+    line-height: 100px;
+    color: white;
+    margin-top: 30px;
+}
+
+  h3{
+    font-weight: bolder;
+
+  }
+
+  h2{
+    /* 제목 앞에 바 넣고 들여쓰기 */
+    border-left: 5px solid;
+    padding-left: 10px;
+    /* 세로 정렬 요소의 높이와 줄간격을 동일하게 지정 */
+    height: 50px;
+    line-height: 50px;
+  }
+    /* 첫번째 자식 요소 */
+  li:first-child{
+    border-color: red;
+  }
+    /* 몇번째 자식 요소 */
+  li:nth-child(2){
+    border-color: blue;
+  }
+  li:nth-child(3){
+    border-color: rgba(163, 248, 5, 0.966);
+  }
+    /* 마지막 자식 요소 */
+  li:last-child{
+    border: 0px;
+  }
+article{
+    border: 1px dashed #333030;
+    margin-bottom: 10px;
+    /* padding값 : 상하 좌우 */
+    padding: 0px 10px ;
+    margin-left: 10px;  
+    width: 48%;
+    float: left;
+    height: 275px;
+  
+}
+
