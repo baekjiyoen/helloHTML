@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>상품정보</h1>
+    <div id="result"></div>
+    <script>
+        window.onload=function(){
+            // 요청url
+            fetch(url+param)
+                .then(res => res.json())
+                .then(data =>{
+                    console.log(data.response.body.items.item);
+                    let items = data.response.body.items.item;
+                    console.log(items);
+                    for(item of items){
+                        content += `
+                            <ul>
+                                <li><a href='${item.homepage}'>${item.facltNm}</a></li>
+                                <li>홈페이지:${item.homepage}</li>
+                                <li>소개:${item.intro}</li>
+                                <li><img src='${item.firstImageUrl}'></li>
+                                
+                            </ul>
+                        `; 
+                    }
+                    
+                    document.querySelector('#result').innerHTML = content;
+                })
+            } catch(err) {
+                console.log(err);
+            }
+        
+        }
+    </script>
+</body>
+</html>

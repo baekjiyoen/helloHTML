@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    태어난 년도를 적어주세요 : 
+    <input id="year" type="text" value="">
+    <!-- 버튼이 클릭 되면 getAge함수를 실행 -->
+    <button onclick="getAge()">나이 구하기</button>
+    <div id="box">당신의 나이는 00살 입니다</div>
+    
+    <script>
+        function getAge(){
+            // 나이구하기
+            // 2024 - year + 1
+            // input요소의 value값은 문자타입을 반환 합니다.
+
+            // 자바스크립트 날자 객체를 제공
+            var now = new Date(); // 현재 날자를 반환
+            
+            // 1. 변수 year를 선언 합니다. var year;
+            var year;
+            // 2. 아이디가 year인 요소의 value속성 값 변수에 저장 합니다.
+            // value속성을 문자 타입으로 반환 합니다.
+            year = document.querySelector('#year').value;
+            
+            // 더하기 연산자의 경우, 문자열을 연결할수 있는 기능이 있기때문에 
+            // 형변환을 하지 않고 두값을 연결하여 문자열로 반환 합니다.
+            
+            // now.getFullYear() : 현재 년도를 반환
+            // Number : 숫자타입으로 형변환 해주는 함수
+            var age = now.getFullYear() - Number(year) + 1;
+            console.log('age',age);
+            
+            var box = document.querySelector('#box');
+            box.innerHTML = `당신의 나이는 ${age}살 입니다`;
+        }
+        </script>
+
+    <hr>
+    <input type="text" id="num1" size="3" value="10"> + 
+    <input type="text" id="num2" size="3" value="10"> 
+    = <input type="text" name="" id="res" size="3" value="">
+    <p>
+        <button onclick="add()">더하기 실행</button>
+    </p>
+    <script>
+        function add(){
+            console.log('더하기!');
+            // 아이디가 num1인 요소의 value값을 num1 변수에 담아봅시다
+            var num1 = document.querySelector('#num1').value;
+            console.log('num1=', num1);
+            // 아이디가 num2인 요소의 value값을 num2 변수에 담아봅시다
+            var num2 = document.querySelector('#num2').value;
+            console.log('num2=', num2);
+
+            
+            // 만약 num1 빈 문자열 이거나 num2가 빈 문자열 이라면 '값을 입력해주세요' 라는 메세지를 출력 후 종료
+            // 또는 ||
+            // 그리고 &&
+            if(num1 == '' || num2 == ''){
+                alert('값을 입력 해주세요');
+                // 함수 종료
+                // 값을 반환
+                return false;
+            }
+
+            // (아이디가 res인 요소의 value값에)
+            // 변수 num1과 num2의 합을 출력 해봅시다
+            var res = document.querySelector('#res');
+            // 텍스트필드의 value속성에 값을 넣어줍니다
+            // 더하기 연산자의 경우 다른 연산자와는 다르게
+            // 문자열을 연결하는 기능이 있다
+            // 그래서 연산하려는 값이 문자인 경우
+            // 숫자로 형변환을 하지 않고 연결하여 문자열로 반환
+            res.value = Number(num1) + Number(num2);
+
+        }
+        
+        document.querySelector('#num1').focus();
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>BOM(Browser Object Model) 객체</h2>
+    <h2>window 객체</h2>
+    <p>
+        window 객체는 자바스크립트의 최상위 객체이며, 브라우저 내의 모든 요소들과 객체를 포함한다. <br>
+        BOM : location 객체, navigator 객체, history 객체, screen 객체 <br>
+        DOM : document 객체
+    </p>
+    <button id="btn1">window객체</button>
+    <button id="btn2">3초후 이동</button>
+    <!--setInterval() 일정시간 경과된후 콜백함수를 반복 실행-->
+    <button id="btnStart">실행</button>
+    <button id="btnStop">종료</button>
+    <div id="box1"></div>
+    <h3>1) location 객체</h3>
+    <p>
+        브라우저의 주소 표시줄과 관련된 객체이다.
+    </p>
+    <!-- location.reload() : 현재 페이지 새로고침 -->
+    <button onclick="location.reload()">새로고침</button>
+    <!-- location.href : 현재 페이지의 url주소를 가지고 있는 속성 -->
+    <button onclick="location.href = location.href ">새로고침</button>
+    <!-- 현재페이지를 요청 url로 변경 (history에 기록되지 않는다!)-->
+    <button onclick="location.replace(location.href)">새로고침</button>
+    <button onclick="location.href='http://naver.com'">naver로 이동</button>
+    <button onclick="location.replace('http://naver.com')">replace(naver로 이동)</button>
+    <h3>2) history 객체</h3>
+    <p>
+        브라우저의 방문 기록과 관련된 객체이다.
+    </p>
+
+    <button onclick="history.back()">back()</button>
+    <button onclick="history.forward()">forward()</button>
+    
+    <h3>3) navigator 객체</h3>ㅣ
+    <button id="btn3">navigator객체의 속성</button>
+
+
+    <script>
+        btn1.onclick = ()=>{
+            box1.innerHTML = 'window객체';
+            // window.open(); // 새탭
+            // window.open('http://naver.com'); // 첫번째 인수 : url
+            // window.open('http://naver.com', 'naver'); // 두번째 인수 : 창이름
+
+            // 팝업창 
+            // 특성의 경우 브라우저마다 다르게 동작하기 때문에 정상적으로 동작하는지 꼭 확인해야 한다.
+            //window.open('https://www.naver.com', 'naver', 'width=500', 'height=600', 'resizable=no');
+            
+            let newWindow = window.open();
+            console.log(newWindow);
+            // 타이머 관련 메서드
+            newWindow.alert('3초 후 이 페이지는 종료됩니다.');
+
+            // 일정시간 후 콜백함수를 한번 실행
+            let timerId = window.setTimeout(()=>{
+                // 창 닫기
+                newWindow.close();
+            }, 3000);
+
+            console.log('timerId', timerId);
+
+            clearTimeout(timerId);
+
+            
+        }
+
+        btn2.onclick=()=>{
+            setTimeout(()=>{
+                location.replace('http://www.naver.com');
+            }, 3000)
+        }
+
+        var timerId;
+        btnStart.onclick = ()=>{
+            
+            // 1초에 한번씩 실행
+            timerId = setInterval(() => {
+                // 현재 날짜와 시간 반환
+                let now = new Date();
+                console.log(now);
+                // 현재시간을 시 분 초 출력 합니다.
+                box1.innerHTML= `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+            }, 1000);
+        }
+
+        btnStop.onclick = ()=>{
+            clearInterval(timerId);
+        }
+
+        btn3.onclick=function(){
+            let content = "";
+            for(let key in navigator){
+                content += `key : ${key}, value : ${navigator[key]} \n`;
+            }
+
+            console.log(content);
+        }
+    </script>
+
+</body>
+</html>

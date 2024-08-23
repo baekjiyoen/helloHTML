@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>2단</h1>
+    <div id="box1"></div>
+    <button onclick="gugudan()">2단 출력</button>
+    <script>
+        function gugudan(){
+            // 2 * 1 = 2
+            // 2 * 2 = 4    ....
+            // 2 * 9 = 18
+            // 반복문을 이용해서 1 ~ 9까지 콘솔창에 출력
+            for(var i=1; i<10; i++){
+                var text = "2 * " + i + " = " + 2 * i;
+                console.log(text);
+                // console.log('i:',`2 * ${i} = ${2*i}`);
+                document.querySelector('#box1').innerHTML += text+'<br>';
+            }
+        }
+    </script>
+    <hr>
+    <h1>입력을 받아서 출력</h1>
+    <input type="text" id="input_num" size="1">단 
+    <button onclick="gugudan1()">출력</button>
+    <div id="box2"></div>
+    <script>
+        // 1. 버튼을 클릭 하면 함수가 실행
+        function gugudan1(){
+            var text = "구구단";
+            var dan = document.querySelector('#input_num').value;
+            // 만약 dan의 값이 빈문자열('')이면 
+            // '단을 입력해주세요' 메세지를 출력후 함수를 종료
+            // 빈문자열이 아니면 text 변수의 값을 x단 으로 변경
+            if(dan == ''){
+                alert('단을 입력해주세요');
+                document.querySelector('#input_num').focus();
+                return;
+            } else {
+                // \n : 개행문자(줄바꿈 문자)
+                text = dan+"단\n<br>";
+            }
+            console.log(text);
+            // dan * 1 ~ dan * 9 반복
+            for(var i=1;i<10;i++){
+                text += `${dan} * ${i} = ${dan*i}\n<br>`;
+            }
+            console.log(text);
+            document.querySelector('#box2').innerHTML = text;
+
+        }
+        // 2. input박스의 value값을 변수에 저장하기
+        // 3. 변수단 출력
+
+
+    </script>
+    <hr>
+    <h1>2단 ~ 9단 출력</h1><br>
+    <div id="box3"></div>
+    <button onclick="gugudan2()">2~9단 출력</button>
+    
+    <!-- 버튼이 클릭 되면 함수가 실행 -->
+    <script>
+        function gugudan2(){
+            // 반복문을 이용해서 2~9까지 출력
+            // 변수의 이름은 dan으로 합니다
+            var text="";
+            // dan : 2부터 20까지 반복
+            for(var dan=2; dan<21; dan++){
+                //console.log(dan+"단");
+                text += "<br>" + dan + "단<br>";
+
+                // i : 1 ~ 9까지 반복
+                for(var i=1; i<10; i++){
+                    // console.log(`${dan} * ${i} = ${dan*i}\n`);
+                    text += `${dan} * ${i} = ${dan*i}<br>`;
+                }
+
+            }
+
+            // text변수의 값을 박스에 출력
+            document.querySelector('#box3').innerHTML = text;
+
+        }
+    </script>
+</body>
+</html>

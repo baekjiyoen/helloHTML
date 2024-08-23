@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체</title>
+</head>
+<body>
+    <h2>String 객체</h2>
+    <p>문자열을 저장하는 객체</p>
+    <button id="btn1">String 객체</button>
+    <div id="box1"></div>
+
+    <script>
+        btn1.onclick=()=>{
+            box1.innerHTML = 'String 객체<br>';
+            let str = 'javascript';
+            let str1 = new String('javascript');
+            box1.innerHTML += `str : ${str}, typeof(str) : ${typeof(str)} <br>`;
+            box1.innerHTML += `str1 : ${str1}, typeof(str1) : ${typeof(str1)} <br>`;
+
+            // 기본타입 : 값만 가지고 있다
+            // 자동형변환 되어져서 메서드가 호출
+            box1.innerHTML += `str.bold() : ${str.bold()} <br>`;
+            box1.innerHTML += `str1.bold() : ${str1.bold()} <br>`;
+            box1.innerHTML += `str1.italics() : ${str1.italics()} <br>`;
+            box1.innerHTML += `str1.fontcolor('red') : ${str1.fontcolor('red')} <br>`;
+        
+            let num = 3141592
+            let num1 = Number(3.146592);
+            let num2 = new Number(30146592);
+            
+            box1.innerHTML += `num : ${num}, typeof(num) : ${typeof(num)} <br>`
+            box1.innerHTML += `num1 : ${num1}, typeof(num1) : ${typeof(num1)} <br>`
+            box1.innerHTML += `num2 : ${num2}, typeof(num2) : ${typeof(num2)} <br>`
+            
+            box1.innerHTML += `Math.PI : ${Math.PI} <br>`;
+
+            let now = new Date();
+            // 날자입력 /, -
+            let date1 = new Date('2024/03/23/14:20:22');
+            let date2 = new Date('2024-03-23T14:20:22');
+            let date3 = new Date(2024,2,23,14,20,22);// 월은 0~11
+
+            box1.innerHTML += `now : ${now} <br>`;
+            box1.innerHTML += `date1 : ${date1} <br>`;
+            box1.innerHTML += `date2 : ${date2} <br>`;
+            box1.innerHTML += `date3 : ${date3} <br>`;
+            
+            box1.innerHTML += `now : ${now.getFullYear()} <br>`;
+            box1.innerHTML += `now : ${now.getMonth()} <br>`; // 0 ~ 11
+            box1.innerHTML += `now : ${now.getDate()} <br>`;
+            box1.innerHTML += `now : ${now.getDay()} <br>`; // 0: 일요일, 6: 토요일
+            box1.innerHTML += `now : ${now.getHours()} <br>`;
+            box1.innerHTML += `now : ${now.getMinutes()} <br>`;
+            box1.innerHTML += `now : ${now.getSeconds()} <br>`;
+            box1.innerHTML += `now : ${now.getMilliseconds()} <br>`;
+
+            // Date 객체의 메소드 호출
+            box1.innerHTML += `${date1.getFullYear()} <br>`;
+            box1.innerHTML += `${date1.getMonth() + 1} <br>`; // 월은 0부터 시작
+            box1.innerHTML += `${date1.getDate()} <br>`; 
+            box1.innerHTML += `${date1.getDay()} <br>`; // 0:일요일, 6:토요일
+            box1.innerHTML += `${date1.getHours()} <br>`; 
+            box1.innerHTML += `${date1.getMinutes()} <br>`; 
+            box1.innerHTML += `${date1.getSeconds()} <br>`; 
+            box1.innerHTML += `${date1.getMilliseconds()} <br><br>`; 
+
+            // 1970년 1월 1일 00시를 기준으로 현재 시간에 대한 밀리 세컨드 값을 반환한다.
+            box1.innerHTML += `${date1.getTime()} <br>`;
+            // 표준시와 Date 객체에 지정된 시간과 차이를 분 단위로 반환한다.
+            box1.innerHTML += `${date1.getTimezoneOffset() / 60} <br>`;
+            box1.innerHTML += `${date1.toDateString()} <br>`;
+            box1.innerHTML += `${date1.toTimeString()} <br>`;
+            box1.innerHTML += `${date1.toUTCString()} <br>`;
+            box1.innerHTML += `${date1.toISOString()} <br>`;
+            box1.innerHTML += `${date1.toLocaleString()} <br>`;
+            box1.innerHTML += `${date1.toLocaleDateString()} <br>`;
+            box1.innerHTML += `${date1.toLocaleTimeString()} <br>`;
+            box1.innerHTML += `${date1.toLocaleString('en-US')} <br>`;
+            box1.innerHTML += `${date1.toLocaleDateString('en-US')} <br>`;
+            box1.innerHTML += `${date1.toLocaleTimeString('en-US')} <br>`;
+        }
+    </script>
+</body>
+</html>

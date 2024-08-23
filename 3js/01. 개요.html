@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 개요</title>
+    <style>
+        div{
+            width: 300px;
+            height: 100px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <h2>자바스크립트 개요</h2>
+    <!--  
+    웹 브라우저에서 많이 사용되는 인터프리터 방식의 스크립트 언어(함수, 객체지향)
+        - 인터프리터 방식 : 컴파일 과정 없이 실행하면서 코드를 하나씩 읽어내는 방식이다. 
+        (코드에 문법에 오류가 있으면 실행 시점에 알 수 있다.)
+    -->
+    <h3>1. 자바스크립트 사용법</h3>
+    <h4>inline(인라인)</h4>
+    <!--  
+        태그 내에 직접 간단한 코드를 작성해서 실행하는 방법
+        자바스크립트 소스가 몇 줄 안되는 경우 inline 방식을 사용한다.
+
+        alert : 메세지창 출력
+        onclick : 클릭이벤트가 발생 했을때 실행할 함수를 지정하거나
+                 스크립트를 작성
+    -->
+    <!-- 버튼에 클릭 이벤트가 발생했을때 메세지창을 띄워줘 -->
+    <button onclick="alert('버튼이 클릭되었어요!')"
+            style="color:red">버튼</button>
+    <h4>internal(내부)</h4>
+    <!--  
+        script 태그 영역에 함수 단위로 소스코드를 작성해놓고
+        이벤트 발생 시 해당 함수를 호출함으로써 실행하는 방식이다.
+    -->
+    <button id="btn1">내부</button>
+    <button id="btn2">함수호출</button>
+    <script>
+        // alert('반갑습니다!');
+        // 변수 선언에 사용되는 키워드
+        // var, let, const
+        // 키워드 변수이름 = 변수에 저장할 요소 또는 값
+        
+        // 버튼을 변수에 저장
+        var btn1=document.getElementById('btn1');
+        
+        // 버튼이 클릭 되었을때 실행할 함수를 지정
+        btn1.onclick = function(){
+            // 메세지창에 출력
+            alert('버튼이 클릭 되었어요!!')
+            // 문자를 입력할 때 "" ,'' 로 묶어 주세요!
+            // 콘솔창에 출력
+            console.log('내부스크립트 버튼이 클릭 되었어요');
+        }
+        // btn2에 클릭 이벤트가 발생했을때 실행할 함수의 이름을 적어줍니다
+        // ()를 붙이면 함수가 바로 실행됨!!!
+        btn2.onclick = btn1click;
+        
+        // 한줄 주석
+        /*
+            여러줄 주석
+        */
+       
+        /* 함수 생성
+        function 함수이름(){
+        }*/
+
+        /**
+         * 호이스팅 
+         * 함수, var로 선언한 변수의 선언부를 
+         * 최상단으로 올려주는 기능
+         * */
+        function btn1click(){
+            alert('함수가 호출 되었어요!!');
+        }
+
+    </script>
+
+
+    <h4>external(외부파일)</h4>
+    <!--  
+    별도의 .js 파일로 작성해서 html 파일에서 가져다 사용하는 방법
+    자바스크립트의 양이 많거나 중복되는 코드가 있을 경우
+     자바스크립트 코드 부분을 별도의 외부 파일로 작성한다.
+    -->
+    <!-- 인라인 방식을 이용해서 함수를 -->
+    <button onclick="external()">외부파일</button>
+
+
+    <script src="js/01. 개요.js"></script>
+
+    <hr>
+
+    <h3>2. 데이터 입출력</h3>
+    <h4>1) 데이터 입력</h4>
+    <!--  
+    window.confirm()
+        - 어떤 질문에 대해 "예/아니오"의 결과를 얻을 때 사용한다.
+        - 확인 버튼과 취소 버튼이 나타나며 확인 버튼 클릭 시 true,
+            취소 버튼 클릭 시 false를 리턴한다.
+    -->
+    <button onclick="checkConfirm()">confirm</button>
+
+    <script>
+        function checkConfirm(){
+            var res = confirm('배고프신가요?!');
+            
+            // 제어문
+            if(res){
+                // 만약에 ()의 값이 참(true)이라면 여기를 실행
+                alert('밥먹으러 가요~!');
+            }else{
+                // 아니면 여기를 실행
+                alert('열심히 공부하세요~!');
+            }
+        }
+    </script>
+
+    <br><br>
+
+    <button onclick="checkPrompt()">prompt</button>
+    <script>
+        function checkPrompt(){
+            var res = prompt('좋아하는 과일은 무엇인가요?', '없음');
+            console.log(res);
+        }
+    </script>
+
+    <h4>2) 데이터 출력</h4>
+    <!--  
+        document.write()
+            - 브라우저 화면상의 페이지에 직접 값을 출력한다.
+    -->
+    <script>
+        document.write('<mark>document.write()로 작성 했어요</mark>');
+    </script>
+
+    <!--  
+        window.alert()
+            - 브라우저 화면상에 알림 창을 출력한다.
+    -->
+    <script>
+        //window.alert('메세지창 테스트 - 1');
+        //alert('메세지창 테스트 - 2');
+    </script>
+
+    <br><br>
+    <div id="box1">
+        자바스크립트에서 태그 요소의 값을 읽거나 변경할 때 <b>innerHTML</b> 속성을 사용한다.
+    </div>
+    <button onclick="change()">innerHTML</button>    
+    <script>
+        function change(){
+            /* 
+            요소를 선택 하는 3가지 방법
+            1. 아이디로 선택 : box1
+            2. getElementById : document.getElementById('box1')
+            3. querySelector(선택자를 이용) : document.querySelector('#box1')
+            */
+            // 요소를 선택후 바로     
+           alert(document.querySelector('#box1').innerHTML);
+           // 변수에 저장후 값을 출력
+           var box = document.querySelector('#box1');
+           
+            // console.log()
+            // - 개발자 도구의 콘솔 화면에 출력하고자 할 때 사용한다. (디버깅 할 때 주로 사용한다.)
+            console.log("box ===============", box);
+            console.log("box.innerHTML =====", box.innerHTML);
+            console.log("box.innerText =====", box.innerText);
+
+            // += : 기존 컨텐츠를 유지한채 이어붙이기
+            // = : 기존 컨텐츠 내용을 없애고 새로 작성
+            box.innerHTML += "<br> innerHTML 속성으로 값 변경";
+            box.innerText += "<br> innerText 속성으로 값 변경";
+        }
+
+    </script>
+
+    <hr>
+
+    <h3>3. HTML 요소에 접근하기</h3>
+    <h4>1) 아이디로 접근하기</h4>
+
+    <button onclick="accessId()">아이디로 접근</button>
+    <div id="areaId" class="areaClass"></div>
+
+    <script>
+        // accessId 함수를 생성하고
+        // 아이디가 areaId인 요소를 선택후 area변수에 저장
+        // area를 콘솔에 출력
+        function accessId(){
+            var area = document.querySelector('.areaClass');
+            console.log(area);
+
+            area.style.backgroundColor = 'red';
+            area.style.color = 'pink';
+
+            // div박스안에 색상변경완료 라는 메세지를 입력
+            // 선택된 요소의 시작태그와 끝태그 사이의 값을 변경
+            area.innerHTML = '색상변경완료!';
+        }
+    </script>
+
+    <!-- 반복문, 배열을 학습 후
+    이름으로 접근
+    태그로 접근하기
+     -->
+
+     <h4>4) text박스의 value값 얻어오기</h4>
+     아이디 : <input type="text" value="user01" id="userId">
+     <button onclick="readValue()">value값 출력</button>
+     <script>
+        function readValue(){
+            // 요소 - <input type="text" value="user01" id="userId">
+            // = 오른쪽에 있는 값을 왼쪽변수에 넣어줘
+            // 대입
+            var id = document.querySelector('#userId');
+
+            // 문자열 - user01
+            var text = document.querySelector('#userId').value;
+            // alert(id.value);
+            // 사용자가 입력한 값을 체크
+            // == 같은지 비교
+            if(id.value.length == 0){
+                alert('id를 입력하세요');
+                id.focus();
+            } else {
+                // + : 숫자연산
+                // 문자열 연결
+                alert('당신의 아이디는 [' + id.value + '] 입니다')
+            }
+            // text.value; // 문자열에는 value속성이 없다
+            
+        }
+     </script>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

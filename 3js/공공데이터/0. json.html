@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON, XML : 확장자</title>
+</head>
+<body>
+    <h1>JSON</h1>
+    <p>
+      데이터를 효율적으로 표현하고 교환하기 위한 경량의 데이터 형식<br>
+      JSON 데이터는 키-값 쌍의 집합으로 구성된 텍스트<br>
+      키값은 문자열이며 값은 "문자열", 숫자, 논리형(true/false)
+      , 배열([]), 객체({키:값,...})를 표현 할 수 있습니다.
+    </p>   
+
+    <script>
+        // json형식의 문자열 생성
+        let json = 
+            '{"키":"값", "name":"오미선", "age":16, "결혼여부": false}';
+        console.log(json);
+        // 문자열을 object로 변환 하여 반환
+        let obj = JSON.parse(json);
+        console.log(obj);
+
+        // 삼항연산자(변수의 대입을 간단하기 할 수 있다)
+        // 변수 = (조건식) ? true일때 반환값 : false일때 반환값
+        let merry = obj.결혼여부 ? "기혼" : "미혼";
+        /* 삼항연산자를 이용하기 전 로직
+        if(obj.결혼여부){
+            let merry = "기혼";
+        } else {
+            let merry = "미혼";
+        }
+        */
+
+        let content = `
+            <h1>사용자 정보</h1>
+            <ul>
+                <li>키 : ${obj.키}</li>
+                <li>이름 : ${obj.name}</li>
+                <li>나이 : ${obj.age}</li>
+                <li>결혼여부 : ${merry}</li>
+            </ul>
+        `;
+        document.querySelector('body').innerHTML = content;
+    </script>
+</body>
+</html>

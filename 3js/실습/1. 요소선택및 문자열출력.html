@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        print();
+    </script>
+
+    <h3>출력 테스트</h3>
+    <div id="box2" class="box_style"></div>
+
+    <script>
+        print1()
+    </script>
+    
+    <script>
+        // 콘솔창에서 함수를 실행 하는 방법
+        // 함수의 이름을 불러줍니다!! 
+        // 함수를 실행 하기 위해서는 이름뒤에 ()를 붙여줘야 해요!!
+        function print(){
+            // 변수선언및 초기화
+            // 왼쪽의 값을 오른쪽 변수에 저장(대입)
+            var a = '안녕';
+            
+            // 왼쪽의 값을 오른쪽 변수의 값에 연결해서 저장
+            a += '하세요'
+
+            // 변수에 값을 출력하는 방법
+            //  alert(a) // 메세지창 출력
+            //  console.log(a) // 콘솔창 출력
+
+            var id = 'momo';
+            
+            // 콘솔창에 당신의 id는 (변수id의 값) 입니다
+            // 문자열과 변수를 함께 출력 하는 방법
+            var msg = '콘솔창에 당신의 id는 ' + id + ' 입니다';
+
+            console.log(msg);
+            // 더하기 연산자를 이용해서 출력하는 방법
+            console.log('콘솔창에 당신의 id는 ' + id + ' 입니다');
+            // 백팃기호와 ${}를 이용해서 출력하는 방법
+            console.log(`콘솔창에 당신의 id는 ${id} 입니다`);
+
+            // 클래스값이 box1인 요소를 선택해서 값을 입력 해봅시다
+            // (id)님 환영 합니다.
+            var box1 = document.querySelector('.box1');
+            box1.innerHTML = `${id}님 환영합니다.`;
+
+        }
+
+        function print1(){
+            var name = '미선';
+            // id가 box2인 요소에  
+            // (name)님 환영합니다. 
+            // 라고 출력 하세요
+            var box2 = document.querySelector('#box2');
+
+            box2.innerHTML = name + '님 환영합니다.';
+        }
+    </script>
+</body>
+</html>

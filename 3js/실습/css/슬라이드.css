@@ -1,0 +1,60 @@
+*{
+    /* 박스의 크기를 정할때 border영역까지 포함 */
+    box-sizing: border-box;
+}
+#slide{
+    width: 1200px;
+    height: 300px;
+    border: 1px solid;
+    /* slide를 기준으로 배치를 하기위해서 */
+    position: relative;
+    
+    overflow: hidden;
+}
+#prev{
+    top: 0px;
+    left: 0px;
+    /* position 속성을 적용후 사용가능 */
+    z-index: 10;
+}
+#next{
+    top: 0px;
+    right: 0px;
+}
+/* 공통으로 적용되는 스타일 */
+.bar{
+    /* 부모상자를 기준으로 위치를 잡아줍니다. */
+    position: absolute;
+
+    width: 30px;
+    height: 100%;
+    background-color: #333;
+    /* 투명도 0 ~ 1 */
+    opacity: 0.6;
+
+    text-align: center;
+    padding-top: 120px;
+    color: #fff;
+
+    font-size: 2rem;
+    font-weight: 600;
+}
+#prev:hover, #next:hover{
+    opacity: 1;
+}
+
+.active{
+    opacity: 1;
+}
+
+img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    /* 투명도를 조절하여 이미지를 화면에서 숨김 */
+    opacity: 0;
+
+    /* 요소의 속성 변화를 부드럽게 해줍니다. 2s=2초(변화의 지속시간)*/
+    transition: 2s;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본문법</title>
+    <style>
+        .box_style{
+            width: 100%;
+            height: 200px;
+            border: 1px solid;
+            /* 부모의 영역을 벗어났을 경우 
+                hidden : 숨김
+                scroll : 스크롤을 보여줌 */
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <h1>기본문법</h1>
+    <hr>
+    <h2>1. 변수와 자료형</h2>
+    <h3>1) 변수 선언</h3>
+    <p>
+        (재사용 하기 위해 변수에 담아놓고 사용)
+
+        1.1. 변수선언
+            키워드 변수명;
+            키워드 : var, let, const
+        1.2. 변수 선언과 동시에 값(요소, 텍스트, 숫자, 배열)을 세팅
+            오른쪽의 값을 왼쪽 변수에 저장(대입)
+            키워드 변수명 = 값
+
+        <hr>
+
+        - 함수 내부에서 'var 변수명;'으로 선언하면 함수에서만 사용 가능한 지역변수가 된다. <br>
+        - 함수 내부에서 '변수명;'으로 선언하거나 함수 밖에서 'var 변수명;'으로 선언하면 전역변수가 된다. <br>
+        - 전역변수와 지역변수가 동일한 이름인 경우, 함수 내부에서 호출하면 지역변수가 우선권을 가진다. <br>
+        - 전역변수 사용 시 'window.변수명' 혹은 'this.변수명'으로 표현해서 사용한다. (window, this) <br>
+        - 전역변수는 해당 window 내에서 어디든 사용할 수 있고, 지역변수는 해당 함수 내에서만 사용이 가능하다.
+
+        <br><br>
+        *참고 - window 객체는 브라우저에서 제공하는 브라우저창(window)에 대한 정보를 담고 있는 객체이다.
+
+    </p>
+
+    <script>
+        // 전역변수
+        var a=123;
+
+        /*
+            반환값을 가질수 있는 재사용 가능한 코드블럭
+            보통 특정 기능을 수행
+        */
+        function test(){
+            // 지역변수 - 함수 내부에서만 사용이 가능
+            var b=123;
+            var a=456;
+            console.log('a', a);
+            console.log(a);
+        }
+
+    </script>
+    <!-- 스크립트 외부파일 등록 -->
+    <script src="js/02. 기본문법.js"></script>
+    <h3>2) 자료형</h3>
+    <p>
+        자바스크립트에서는 변수에 별도로 자료형을 지정해 주지 않고 리터럴에 의해 자료형이 결정된다.<br>
+        * 리터럴 : 값 그 자체를 의미<br>
+        var a=123 -> 숫자
+        var a='123' -> 문자
+    </p>
+    <ul>
+        <li>string(문자열) - "", ''로 감싸줍니다</li>
+        <li>number(숫자)</li>
+        <li>boolean(논리값) - true(참), false(거짓) -> 제어문에서 분기조건 사용</li>
+        <li>object(객체) - 문자,숫자,논리값,함수를 제외한 모든 타입 <br>
+                            전역변수와 함수를 가질수 있다
+        </li>
+        <li>function(함수) - 기능</li>
+        <li>undefined(초기화가 안된 변수), 반환값이 없는경우</li>
+    </ul>
+    <div class="box1 box_style"></div>
+    <button onclick="testType()">자료형테스트</button>
+    함수를 만들고 버튼이 클릭되면 div박스에 [자료형 테스트] 라는 문구가 출력 되도록 하시오
+
+    <script>
+        print();
+    </script>
+
+    <h3>출력 테스트</h3>
+    <div id="box2" class="box_style"></div>
+
+    <script>
+        print1()
+    </script>
+
+    <h2>2. 데이터의 형변환</h2>
+    <h3>1) 연산자(문자열과 숫자의 '+' 연산)</h3>
+    <div id="box3" class="box_style"></div>
+    <button onclick="plusTest()">연산자함수 실행</button>
+
+    <h3>2) 강제형변환</h3>
+    숫자로 형변환 Number(값) : 값을 숫자로 변환 하여 반환 <br>
+        parseInt(값) : 값을 정수 숫자로 변환 하여 반환
+        parseFloat(값) : 값을 실수로 변환 하여 반환
+    문자로 형변환 String(값) : 값을 문자로 변환 하여 반환
+
+    <h2>3. 연산자</h2>
+    <h3>'==' 연산자와 '===' 연산자</h3>
+    <p>
+        == : 값이 일치하는지 확인
+        === : 값과 자료형이 일치하는지 확인
+    </p>
+    <button onclick="opTest()">연산자 테스트</button>
+    <div id="box4">     </div>
+
+    <h2>4. 제어문과 반복문</h2>
+    <h3>제어문</h3>
+    <p>프로그램의 흐름을 제어하고 조건에 따라 코드블럭을 실행합니다.</p>
+
+    <h4>조건문</h4>
+    <pre>
+        if(조건){}
+
+        if(조건){
+            // 조건이 참인 경우 실행
+        } else {
+            // 조건이 거짓일때 실행
+        }
+
+        if(조건1){
+            // 조건1이 참인 경우 실행
+        } else if(조건2){
+            // 조건2가 참인 경우 실행
+        } else {
+            // 이전 모든 조건이 거짓인 경우 실행
+        }
+
+        조건문
+            ==, ===, !=, !==
+            >, >=, <, <= 
+            비교연산자를 이용해서 조건문을 작성 합니다
+    </pre>
+    <div id="box5">조건문</div>
+    <button onclick="ifTest()">조건문 확인</button>
+
+    <h4>반복문</h4>
+    <button onclick="forTest()">반복문 확인</button>
+    
+
+    <h4>변수선언시 사용되는 키워드</h4>
+    var, let, const
+    <button onclick="btnClick()">변수 선언 키워드</button>
+    <div id="box6"></div>
+    <script>
+        // 버튼이 클릭 되면 함수를 실행
+        function btnClick(){
+            // id가 box6인 요소를 선택하고 메세지 출력
+            var box6 = document.querySelector('#box6');
+
+            box6.innerHTML='안녕!';
+
+        }
+    </script>
+</body>
+
+</html>

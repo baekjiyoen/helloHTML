@@ -1,0 +1,63 @@
+main{
+    width: 1200px;
+    height: 300px;
+    margin: 0px auto;
+    display: flex;
+    position: relative;
+}
+main section {
+    width: 600px;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+*{
+    box-sizing: border-box;
+}
+main #quick{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid; */
+}
+main #quick img{
+    border-radius: 50%;
+}
+main #quick p{
+    text-align: center;
+}
+main label{
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #fff;
+    display: inline-block;
+}
+
+main div{
+    width: 600px;
+    height: 100%;
+
+    position: absolute;  
+    top:50px ; 
+    left:0px;
+
+    display: none;
+
+    border-top: 1px solid #eee;
+    line-height: 50px;
+
+}
+
+/* 탭메뉴 기본값 */
+main section label:first-of-type{
+    background-color: #eee;
+}
+
+main section div:first-of-type{
+    display: block;
+}
+
+#gallery_box{
+    padding: 20px;
+}

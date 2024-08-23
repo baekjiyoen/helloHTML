@@ -1,0 +1,51 @@
+#slide{
+    width: 1200px;
+    height: 300px;
+    border: 1px solid;
+    /* 자식요소가 slide박스를 기준으로 배치  */
+    position: relative;
+    overflow: hidden;
+}
+*{
+    box-sizing: border-box;
+}
+.bar{
+    width: 30px;
+    height: 100%;
+    background-color: #33333367;
+    /* 부모를 기준으로 위치를 지정 */
+    position: absolute;
+    
+    text-align: center;
+    padding-top: 120px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+#prev{
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+#next{
+    top: 0px;
+    right: 0px;
+}
+
+#slide img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    transition: 2s;
+
+    opacity: 0;
+}
+
+#prev:hover, #next:hover{
+    background-color: #333;
+}
+
+#slide .active{
+    opacity: 1;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>캠핑장 목록</h1>
+    <button id="btn">캠핑장목록조회</button>
+    <div id="resultbox">
+
+    </div>
+    
+    <script>
+        btn.onclick = function(){
+            let url = "https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=test&serviceKey=DU3KPJJtl2AKmdX%2FWH2DnaDhijW8wJFXUTXPdEjTBlHxKSdZVfJP5mIBAcUevwxp3ZQrC8gMUPuq%2BMqo8MDEPA%3D%3D&_type=json";
+            
+            fetch(url)
+            .then(res => res.json())
+            .then(obj => {
+                console.log(obj);
+                let items = obj.response.body.items.item;
+                
+                for(item of items){
+                    let content = `
+                    <ul>
+                        <li>
+                            <h2><a href="${item.homepage}">${item.facltNm}</a></h2>
+                        </li>
+                        <li>
+                            ${item.intro}
+                        </li>
+                        <img src="${item.firstImageUrl}">
+
+                    </ul>
+                    `;
+                    document.querySelector('#resultbox').innerHTML += content;
+                }
+
+            });
+        }
+    </script>
+</body>
+</html>

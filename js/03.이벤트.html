@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/03.이벤트.js"></script>
+    <style>
+        .h30 {
+            height: 30px; color: red; font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <h1>이벤트</h1>
+    <h2>1. 이벤트 모델의 종류</h2>
+    <!-- 고전방식, 표준방식을 이용할 경우, event객체를 매개변수로 전달 받아서
+         어떤요소에서 이벤트가 발생 했는지 확인 할 수 있다 -->
+    <h3>1) 고전 이벤트 모델</h3>
+    <p>
+        요소 객체가 가지고 있는 이벤트 속성에 이벤트 핸들러를 연결하는 방법이다. <br>
+        이벤트 객체를 제거할 수 있는데 제거하고자 한다면 해당 
+        이벤트 속성 값에 null을 대입하면 된다.
+    </p> 
+    <button id="btn2">실행2</button>
+
+    <h3>2) 인라인 이벤트 모델</h3>
+    <button onclick="alert('인라인이벤트')">인라인 이벤트 실행1</button>
+    <!-- 이벤트가 발생한 객체를 전달 -->
+    <button onclick="print(this)">인라인 이벤트 실행2</button>
+
+    <h3>3) 표준 이벤트 모델</h3>
+    <p>
+        w3에서 공식적으로 지정한 이벤트 모델로 
+        한 번에 여러 개의 이벤트 핸들러 설정이 가능하다.
+    </p>
+    <button id="btn3">표준 이벤트 모델</button> 
+    <hr>
+
+    <h2>2. 태그별 기본 이벤트 제거</h2>
+    <p>
+        기본 이벤트를 가지고 있는 요소 <br>
+        a : 클릭 시 href 속성에 제시되어 있는 페이지를 요청하는 기본 이벤트 보유 <br>
+        submit : 클릭 시 입력 양식 제출 후 페이지를 다시 로딩하는 기본 이벤트 보유 <br><br>
+
+        기본 이벤트가 있는 요소에 onclick 이벤트를 설정하면 이 코드가 우선적으로 먼저 실행되고 
+        그 다음에 기본 이벤트가 실행된다. <br>
+        태그에 기본적으로 설정되어 있는 이벤트를 제거하기 위해서는 
+        이벤트 핸들러의 return 값을 false로 하면 된다.
+    </p> 
+    <a href="http://naver.com">네이버로 이동</a>
+    <!-- onclick 이벤트가 먼저 실행되고 기본이벤트가 실행-->
+    <a href="http://naver.com" onclick="alert('네이버로 이동')">네이버로 이동</a>
+    <!-- 기본 이벤트 제거 -->
+    <a href="http://naver.com" onclick="return false">네이버로 이동</a>
+
+    <h3>1) 기본 이벤트 제거1</h3>
+    <!-- 함수의 실행 결과에 따라서 서버에 페이지를 전달 할 지 결정-->
+
+    <form action="/테스트/register.html" onsubmit="return fn_check_form()">
+        아이디 <input type="text" name="" id="userId">
+        <br>비밀번호 <input type="password" name="" id="userPw">
+        <button>로그인</button>
+    </form>
+
+
+    <!-- 이벤트 객체를 이용한 기본이벤트 제거-->
+    <h3>2) 기본 이벤트 제거2</h3>
+    <form action="/테스트/register.html" onsubmit="return fn_check_form()">
+        아이디 <input type="text" name="" id="userId">
+        <br>비밀번호 <input type="password" name="" id="userPw">
+        <button id="btn4">로그인</button>
+    </form>
+
+
+    <hr>
+    <form>
+        <div id="box1" class="h30"></div>
+        <!--name속성의 값 = value속성의 값-->
+        아이디 <input type="text" name="id" id="id" value="user01">
+        <button id="btn1">아이디 중복체크</button>
+        <br>
+        <button type="button">회원가입</button>
+    </form>
+</body>
+
+</html>
