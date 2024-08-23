@@ -58,23 +58,24 @@
     <!-- 기본 이벤트 제거 -->
     <a href="http://naver.com" onclick="return false">네이버로 이동</a>
 
-    <h3>1) 기본 이벤트 제거1</h3>
-    <!-- 함수의 실행 결과에 따라서 서버에 페이지를 전달 할 지 결정-->
+    <h3>1) 기본이벤트 제거1</h3>
+    <!--함수의 실행 결과에 따라서 서버에 페이지를 전달 할 지 결정-->
 
-    <form action="/테스트/register.html" onsubmit="return fn_check_form()">
-        아이디 <input type="text" name="" id="userId">
+    <form action="register.html" onsubmit="return fn_check_form();">
+        아이디  <input type="text" name="" id="userId">
         <br>비밀번호 <input type="password" name="" id="userPw">
         <button>로그인</button>
     </form>
-
-
-    <!-- 이벤트 객체를 이용한 기본이벤트 제거-->
-    <h3>2) 기본 이벤트 제거2</h3>
-    <form action="/테스트/register.html" onsubmit="return fn_check_form()">
-        아이디 <input type="text" name="" id="userId">
-        <br>비밀번호 <input type="password" name="" id="userPw">
-        <button id="btn4">로그인</button>
-    </form>
+    
+    <h3>2) 기본이벤트 제거2</h3>
+    <!-- 이벤트 객체를 이용한 기본이벤트 제거 -->
+    
+     <form action="register.html">
+         아이디  <input type="text" name="" id="userId1">
+         <br>비밀번호 <input type="password" name="" id="userPw1">
+         <button id="btn4">로그인</button>
+     </form>
+ 
 
 
     <hr>
