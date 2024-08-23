@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* > : 자식선택
+        바로 하위요소만 선택 */
+    body>ul{
+        background-color:  #333;
+       }
+       /* 공백 : 하위선택자
+          자식을 포함한 자손선택 */
+    body ul{
+        background-color: red;
+
+       }
+       /* 형제선택자 : 부모가 같은요소 
+        선택자1 + 선택자2 : 같은레벨이면서 첫번째 동생인 경우
+        선택자1 ~ 선택자2 : 같은레벨이면서 형요소 다음에 오는 모든 동생요소
+       */
+       h1 + ul{
+        background-color: rgba(130, 218, 218, 0.897);
+       }
+       h1 ~ a{
+        background-color: rgb(139, 241, 190);
+       }
+
+       /* 속성선택자 
+          속성이 있으면 선택*/
+       [href]{
+            color: red;
+
+       }
+       /* = : 속성의 값이 일치하는경우 
+         ^= : 속성의 값이 시작하는경우
+         $= : 속성의 값이 끝나는경우
+         *= : 속성의 값이 포함하는경우 */
+       [href $="png"]{
+            background-color: black;
+       }
+       [href ^= "c"]{
+            background-color: rgb(228, 228, 80);
+       }
+    </style>
+</head>
+<body>
+
+    <h1>고급선택자</h1>
+    <ul>
+        <li><a href="a.png">메뉴1</a></li>
+        <li><a href="b.html">메뉴2</a></li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+    </ul>
+    <a href="c.gif">메인화면</a>
+    <div>
+        <h1>제목</h1>
+        <ul>
+            <li>목록1</li>
+            <li>목록2</li>
+        </ul>
+    </div>
+</body>
+</html>

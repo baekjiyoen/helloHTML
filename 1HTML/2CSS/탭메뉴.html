@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid red;
+            display: inline-block;
+
+            text-align: center;
+            border-bottom: 0px;
+        }
+        /* 화면에서 숨김처리 */
+        input[type="radio"]{
+        /* 화면에서 요소를 숨김(영역도 없어짐) */
+            /* display: none; */
+        }
+        /* input요소 중에서 type속성의 값이 radio인 요소 
+            checked상태인 요소의 다음형제 label */
+        input[type="radio"]:checked + label{
+            background-color: rgb(200, 155, 241);
+            color: bisque;
+        }
+         /* ~ : 두개의 상자가 모두 선택되므로
+         + 를 이용해서 하나의 박스만 선택 할 수 있다*/ 
+        input[type="radio"]:checked + label + div{
+            display: block;
+            
+
+        }
+
+        .tabMenuContent{
+            width: 500px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            border: 1px solid;
+            display: none
+        }
+        #tabMenuBox{
+        /* 부모상자로 지정 */
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <!-- 라벨이 선택될경우 요소가 선택될 수 있도록 
+        연결요소의 id속성의 값을 라벨요소의 for속성에 기입 -->
+
+    <!-- radio 버튼을 하나만 선택 가능 
+        이름이 같은 요소들 중 (동일한 name지정)  -->
+
+
+    <div id="tabMenuBox">
+    <input type="radio" name="tabMenu" id="tab1" checked>
+    <label for="tab1">탭메뉴</label>
+    <div class="tabMenuContent">
+        1.ㅇㅇㅇㅇ<br>
+        2.ㅇㅇㅇㅇ<br>
+        3.ㅇㅇㅇㅇ
+    </div>
+
+    <input type="radio" name="tabMenu" id="tab2">
+    <label for="tab2">탭메뉴2</label>
+    <div class="tabMenuContent">
+        1.ㄴㄴㄴㄴ<br>
+        2.ㄴㄴㄴㄴ<br>
+        3.ㄴㄴㄴㄴ
+    </div>
+</div>
+</body>
+</html>
